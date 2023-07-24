@@ -4,8 +4,21 @@ import styles from '../styles/header.module.scss';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 import { VscFeedback } from 'react-icons/vsc';
 import MapSection from '../components/home/MapSection';
+import { Store } from '../types/store';
+import useStores from '../hooks/useStores';
+import { useEffect } from 'react';
 
-export default function Home() {
+interface Props {
+  stores: Store[];
+}
+
+export default function Home({ stores }: Props) {
+  const { initializeStores } = useStores();
+
+  useEffect(() => {
+    initializeStores(stores);
+  }, [initializeStores, stores]);
+
   return (
     <>
       <Header
@@ -30,4 +43,13 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const stores = (await import('../public/stores.json')).default;
+
+  return {
+    props: { stores },
+    revalidate: 60 * 60,
+  };
 }
