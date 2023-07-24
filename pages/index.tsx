@@ -3,6 +3,7 @@ import Header from '../components/common/Header';
 import styles from '../styles/header.module.scss';
 import { AiOutlineShareAlt } from 'react-icons/ai';
 import { VscFeedback } from 'react-icons/vsc';
+import MapSection from '../components/home/MapSection';
 
 export default function Home() {
   return (
@@ -17,7 +18,16 @@ export default function Home() {
           </Link>,
         ]}
       />
-      <main style={{ marginTop: '100px' }}>home</main>
+      <main
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+        }}
+      >
+        <MapSection />
+      </main>
     </>
   );
 }
