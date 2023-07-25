@@ -3,6 +3,7 @@ import { Store } from '../types/store';
 import useStores from '../hooks/useStores';
 import { useEffect } from 'react';
 import Header from '../components/home/Header';
+import DetailSection from '../components/home/DetailSection';
 
 interface Props {
   stores: Store[];
@@ -27,6 +28,7 @@ export default function Home({ stores }: Props) {
         }}
       >
         <MapSection />
+        <DetailSection />
       </main>
     </>
   );
