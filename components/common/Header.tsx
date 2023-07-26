@@ -11,9 +11,9 @@ interface Props {
 function Header({ onClickLogo, rightElements }: Props) {
   return (
     <header className={styles.header}>
-      <div className={styles.flexItem}>
+      <div className={`${styles.flexItem} ${styles.customLogo}`}>
         <Link href='/' className={styles.box} onClick={onClickLogo} aria-label='홈으로 이동'>
-          <Image src='/logo.png' width={110} height={30} alt='로고' priority />
+          <Image src='/logo.png' width={64} height={58} alt='로고' priority />
         </Link>
       </div>
       {rightElements && <div className={styles.flexItem}>{rightElements}</div>}
