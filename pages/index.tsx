@@ -4,6 +4,7 @@ import useStores from '../hooks/useStores';
 import { useEffect } from 'react';
 import Header from '../components/home/Header';
 import DetailSection from '../components/home/DetailSection';
+import { NextSeo } from 'next-seo';
 
 interface Props {
   stores: Store[];
@@ -18,6 +19,7 @@ export default function Home({ stores }: Props) {
 
   return (
     <>
+      <NextSeo title='매장 지도' description='Next.js로 개발한 매장 지도 서비스입니다.' />
       <Header />
       <main
         style={{
