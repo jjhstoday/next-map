@@ -13,5 +13,6 @@ export default {
   ],
   additionalMetaTags: [
     { name: 'naver-site-verification', content: '9b4aa26a082d034485944af9dc3166d93ae0ae8c' },
+    { name: 'google-site-verification', content: '6VuK_-JWjxzLcKK0Vwr7E1wHT5UTjmslSir8BmQFbzo' },
   ],
 };
