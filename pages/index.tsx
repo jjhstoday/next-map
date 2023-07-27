@@ -19,7 +19,11 @@ export default function Home({ stores }: Props) {
 
   return (
     <>
-      <NextSeo title='매장 지도' description='Next.js로 개발한 매장 지도 서비스입니다.' />
+      <NextSeo
+        title='매장 지도'
+        description='Next.js로 개발한 매장 지도 서비스입니다.'
+        canonical='https://next-map-phi.vercel.app'
+      />
       <Header />
       <main
         style={{

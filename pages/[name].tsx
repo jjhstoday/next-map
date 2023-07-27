@@ -5,6 +5,7 @@ import type { Store } from '../types/store';
 import styles from '../styles/detail.module.scss';
 import { useRouter } from 'next/router';
 import useCurrentStore from '../hooks/useCurrentStore';
+import { NextSeo } from 'next-seo';
 
 interface Props {
   store: Store;
@@ -22,10 +23,17 @@ const StoreDetail: NextPage<Props> = ({ store }) => {
   };
 
   return (
-    <div className={`${styles.detailSection} ${styles.selected} ${styles.expanded}`}>
-      <DetailHeader expanded={expanded} currentStore={store} onClickArrow={goToMap} />
-      <DetailContent currentStore={store} expanded={expanded} />
-    </div>
+    <>
+      <NextSeo
+        title={store.name}
+        description='Next.js로 개발한 매장 상세 페이지입니다.'
+        canonical={`https://next-map-phi.vercel.app/${store.name}`}
+      />
+      <div className={`${styles.detailSection} ${styles.selected} ${styles.expanded}`}>
+        <DetailHeader expanded={expanded} currentStore={store} onClickArrow={goToMap} />
+        <DetailContent currentStore={store} expanded={expanded} />
+      </div>
+    </>
   );
 };
 
