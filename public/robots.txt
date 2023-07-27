@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://next-map-phi.vercel.app/
+
+# Sitemaps
+Sitemap: https://next-map-phi.vercel.app/sitemap.xml
